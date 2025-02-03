@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function sendEmail() {
+        fetch('/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message: 'User said yes' }),
+        })
+        .then(response => response.text())
+        .then(data => {
+          alert(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">Yeeyy! Finally!</h1>
+        <button onclick="window.location.href='email_prompt.html'">Yes</button>
+
+      </div>
+    </div>
+  </body>
+</html>

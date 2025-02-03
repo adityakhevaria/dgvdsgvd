@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      function sendEmail(response) {
+        let message;
+        if (response === 'yes') {
+          message = 'Yes I will be your Valentine ❤️';
+          document.getElementById('send-message').innerText = 'Yeahhhh 😁';
+        } else {
+          message = "Sorry but I can't, we can be friends though";
+          document.getElementById('send-message').innerText = 'OKAY no worries 😔';
+        }
+        
+        fetch('/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message: message }),
+        })
+        .then(response => response.text())
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+    </script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to right, #ff7e7e, #ffb3b3);
+        font-family: 'Arial', sans-serif;
+        position: relative; /* For positioning hearts */
+      }
+
+      .container {
+        text-align: center;
+        border: 2px solid #ff4d4d;
+        border-radius: 15px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        z-index: 1; /* Ensure container is above hearts */
+      }
+
+      .big-button {
+        width: 100px;
+        height: 50px;
+        background-color: #ff4d4d; /* Red */
+        color: white;
+        border: none;
+        border-radius: 10px; /* Rounded corners */
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 16px; /* Adjust font size */
+        margin: 10px; /* Add margin between buttons */
+      }
+
+      .big-button:hover {
+        background-color: #e60000; /* Darker red */
+      }
+
+      .header_text {
+        font-size: 36px;
+        color: #ff4d4d;
+        margin-bottom: 20px;
+        font-family: 'Cursive', sans-serif;
+      }
+
+      /* Heart emojis in the background */
+      .heart {
+        position: absolute;
+        font-size: 30px; /* Size of the heart emoji */
+      }
+
+      /* Positioning hearts */
+      .heart1 { top: 20px; left: 20px; }
+      .heart2 { top: 50px; left: 100px; }
+      .heart3 { top: 80px; left: 200px; }
+      .heart4 { top: 150px; left: 300px; }
+      .heart5 { top: 200px; left: 50px; }
+      .heart6 { top: 100px; left: 150px; }
+      .heart7 { top: 250px; left: 250px; }
+      .heart8 { top: 300px; left: 100px; }
+      .heart9 { top: 350px; left: 200px; }
+      .heart10 { top: 400px; left: 300px; }
+      .heart11 { top: 20px; right: 20px; }
+      .heart12 { top: 50px; right: 100px; }
+      .heart13 { top: 80px; right: 200px; }
+      .heart14 { top: 150px; right: 300px; }
+      .heart15 { top: 200px; right: 50px; }
+      .heart16 { top: 250px; right: 100px; }
+      .heart17 { top: 300px; right: 150px; }
+      .heart18 { top: 350px; right: 200px; }
+      .heart19 { top: 400px; right: 250px; }
+      .heart20 { top: 450px; right: 300px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="header_text">I wanted to say this from a very long time but I wasn't able to say this</h1>
+      <h1 class="header_text">Will you be my Valentine 🫰?</h1>
+      <button class="big-button" onclick="sendEmail('yes')">Yes</button>
+      <button class="big-button" onclick="sendEmail('no')">No</button>
+      <div id="send-message"></div>
+    </div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+    <div class="heart">❤️</div>
+  </body>
+</html>
